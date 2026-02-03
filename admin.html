@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>XModel Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="admin-box" id="login">
+<h2>Admin Login</h2>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+</div>
+
+<div class="admin-box hidden" id="panel">
+<h2>Upload Product</h2>
+<input id="name" placeholder="Product Name">
+<input id="price" placeholder="Price (Robux)">
+<input id="img" placeholder="Image URL">
+<button onclick="addProduct()">Add</button>
+<button onclick="logout()">Logout</button>
+</div>
+
+<script>
+const USER="admin";
+const PASS="xmodel123";
+
+function login(){
+if(user.value===USER && pass.value===PASS){
+localStorage.setItem("xmodel_admin","true");
+login.style.display="none";
+panel.classList.remove("hidden");
+}else alert("Wrong credentials");
+}
+
+function logout(){
+localStorage.removeItem("xmodel_admin");
+location.reload();
+}
+
+if(localStorage.getItem("xmodel_admin")){
+login.style.display="none";
+panel.classList.remove("hidden");
+}
+
+function addProduct(){
+let products=JSON.parse(localStorage.getItem("products")||"[]");
+products.push({
+name:name.value,
+price:price.value,
+img:img.value
+});
+localStorage.setItem("products",JSON.stringify(products));
+alert("Product added");
+}
+</script>
+
+<script src="security.js"></script>
+</body>
+</html>

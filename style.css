@@ -1,0 +1,60 @@
+body{
+margin:0;
+font-family:Segoe UI;
+background:#0b0f1a;
+color:white;
+overflow-x:hidden;
+}
+header{
+text-align:center;
+padding:50px;
+}
+.admin-link{
+color:#4cc9f0;
+text-decoration:none;
+}
+.shop{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+.card{
+background:rgba(255,255,255,0.08);
+border-radius:15px;
+padding:20px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+text-align:center;
+}
+.card:hover{transform:translateY(-8px);}
+.card img{width:100%;border-radius:10px;}
+button{
+background:#4cc9f0;
+border:none;
+padding:10px 20px;
+border-radius:20px;
+cursor:pointer;
+}
+.admin-box{
+width:300px;
+margin:120px auto;
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:15px;
+text-align:center;
+}
+.admin-box input{
+width:100%;
+margin:8px 0;
+padding:8px;
+border-radius:8px;
+border:none;
+}
+.hidden{display:none;}
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
