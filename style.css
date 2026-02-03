@@ -1,55 +1,84 @@
+*{box-sizing:border-box;}
 body{
 margin:0;
 font-family:Segoe UI;
-background:#0b0f1a;
+background:linear-gradient(135deg,#0b0f1a,#121a3a);
 color:white;
 overflow-x:hidden;
 }
 header{
 text-align:center;
-padding:50px;
+padding:60px 20px;
 }
-.admin-link{
-color:#4cc9f0;
-text-decoration:none;
+h1{
+font-size:3em;
+background:linear-gradient(90deg,#4cc9f0,#b517f0);
+-webkit-background-clip:text;
+color:transparent;
 }
+.admin-btn{
+margin-top:15px;
+background:linear-gradient(90deg,#ff4d4d,#ff0080);
+border:none;
+padding:10px 25px;
+border-radius:25px;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+.admin-btn:hover{transform:scale(1.1);}
 .shop{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 padding:40px;
 }
 .card{
 background:rgba(255,255,255,0.08);
-border-radius:15px;
+border-radius:18px;
 padding:20px;
 backdrop-filter:blur(10px);
-transition:0.3s;
+transition:0.4s;
 text-align:center;
+animation:fadeUp 0.8s ease;
 }
-.card:hover{transform:translateY(-8px);}
-.card img{width:100%;border-radius:10px;}
-button{
-background:#4cc9f0;
+.card:hover{
+transform:translateY(-12px) scale(1.03);
+box-shadow:0 0 25px rgba(76,201,240,0.4);
+}
+.card img{
+width:100%;
+border-radius:12px;
+}
+.card button{
+margin-top:10px;
+background:linear-gradient(90deg,#4cc9f0,#7209b7);
 border:none;
 padding:10px 20px;
 border-radius:20px;
+color:white;
 cursor:pointer;
 }
 .admin-box{
-width:300px;
+width:320px;
 margin:120px auto;
 background:rgba(255,255,255,0.08);
-padding:25px;
-border-radius:15px;
+padding:30px;
+border-radius:20px;
 text-align:center;
+backdrop-filter:blur(10px);
+animation:fadeUp 1s;
 }
 .admin-box input{
 width:100%;
-margin:8px 0;
-padding:8px;
-border-radius:8px;
+margin:10px 0;
+padding:10px;
+border-radius:10px;
 border:none;
+}
+.logout{
+background:#ff4d4d;
+margin-top:10px;
 }
 .hidden{display:none;}
 canvas{
@@ -57,4 +86,8 @@ position:fixed;
 top:0;
 left:0;
 z-index:-1;
+}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:none;}
 }

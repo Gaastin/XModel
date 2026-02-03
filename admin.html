@@ -15,12 +15,12 @@
 </div>
 
 <div class="admin-box hidden" id="panel">
-<h2>Upload Product</h2>
-<input id="name" placeholder="Product Name">
+<h2>Add Product</h2>
+<input id="name" placeholder="Product name">
 <input id="price" placeholder="Price (Robux)">
 <input id="img" placeholder="Image URL">
-<button onclick="addProduct()">Add</button>
-<button onclick="logout()">Logout</button>
+<button onclick="addProduct()">Upload</button>
+<button class="logout" onclick="logout()">Logout</button>
 </div>
 
 <script>
@@ -29,10 +29,10 @@ const PASS="xmodel123";
 
 function login(){
 if(user.value===USER && pass.value===PASS){
-localStorage.setItem("xmodel_admin","true");
+localStorage.setItem("xmodel_admin","1");
 login.style.display="none";
 panel.classList.remove("hidden");
-}else alert("Wrong credentials");
+}else alert("Wrong login");
 }
 
 function logout(){
@@ -46,13 +46,9 @@ panel.classList.remove("hidden");
 }
 
 function addProduct(){
-let products=JSON.parse(localStorage.getItem("products")||"[]");
-products.push({
-name:name.value,
-price:price.value,
-img:img.value
-});
-localStorage.setItem("products",JSON.stringify(products));
+let p=JSON.parse(localStorage.getItem("products")||"[]");
+p.push({name:name.value,price:price.value,img:img.value});
+localStorage.setItem("products",JSON.stringify(p));
 alert("Product added");
 }
 </script>
